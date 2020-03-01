@@ -59,7 +59,7 @@ class Page extends StatelessWidget {
           ),
         ), //Transform
         Flexible(
-          flex: 2,
+          flex: 3,
           child: new _BodyPageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
@@ -129,18 +129,19 @@ class _BodyPageTransform extends StatelessWidget {
       //Used for vertical transformation
       transform:
           new Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
-      child: new Padding(
-        padding: const EdgeInsets.only(
-          bottom: 75.0,
-          left: 10.0,
-          right: 10.0,
-        ),
-        child: DefaultTextStyle.merge(
-          style: pageViewModel.mergedBodyTextStyle,
-          textAlign: TextAlign.center,
-          child: pageViewModel.body,
-        ),
-      ), //Padding
+        child: pageViewModel.body
+//      child: new Padding(
+//        padding: const EdgeInsets.only(
+//          bottom: 75.0,
+//          left: 10.0,
+//          right: 10.0,
+//        ),
+//        child: DefaultTextStyle.merge(
+//          style: pageViewModel.mergedBodyTextStyle,
+//          textAlign: TextAlign.center,
+//          child: pageViewModel.body,
+//        ),
+//      ), //Padding
     );
   }
 }
